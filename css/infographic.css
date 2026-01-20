@@ -1,0 +1,122 @@
+#head-txt {
+  fill: rgb(54, 54, 54);
+}
+.info-graphic,
+.info-text {
+  background-color: var(--color-info-bg);
+  padding: 0;
+}
+.info-graphic {
+  text-align: left;
+  background: transparent !important;
+  border-radius: 0;
+  margin: 60px auto 80px auto;
+}
+.info-text h2 {
+  line-height: 3rem;
+  text-align: center;
+  background-color: var(--color-headline-bg);
+  color: var(--color-headline-text-page);
+  margin-bottom: 1rem;
+}
+.info-text h3 {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.info-text > *:not(:first-child) {
+  margin: 0 clamp(1rem, 10%, 7rem);
+}
+.info-text p {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  margin: 0 0 1.2rem 0;
+  padding: 0;
+}
+.info-box {
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  background-color: var(--color-infobox-1-bg);
+}
+.info-box:nth-of-type(2n) {
+  background-color: var(--color-infobox-2-bg);
+}
+
+.info-graphic img {
+  display: block;
+  max-width: 100%;
+  height: auto; /* keeps aspect ratio */
+  max-height: 90vh; /* ≈ one quarter of the viewport height */
+  margin: 0 auto; /* centers the image */
+}
+/* Make inlined SVG behave like the old image */
+.inline-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* === SVG interactivity styles === */
+.inline-svg g[data-name="face1"],
+.inline-svg g[data-name="face2"],
+.inline-svg g[data-name="body1"] {
+  cursor: pointer;
+}
+
+/* Smooth transitions on the shapes/text within each target group */
+.inline-svg g[data-name="face1"] *,
+.inline-svg g[data-name="face2"] *,
+.inline-svg g[data-name="body1"] * {
+  transition: filter 0.25s ease, stroke-width 0.25s ease, opacity 0.25s ease;
+}
+
+/* Hover + focus highlight */
+.inline-svg g[data-name="face1"]:hover *,
+.inline-svg g[data-name="face1"]:focus-within *,
+.inline-svg g[data-name="face2"]:hover *,
+.inline-svg g[data-name="face2"]:focus-within *,
+.inline-svg g[data-name="body1"]:hover *,
+.inline-svg g[data-name="body1"]:focus-within * {
+  filter: brightness(1.3);
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+/* Optional glow for stronger affordance */
+.inline-svg g[data-name="face1"]:hover *,
+.inline-svg g[data-name="face2"]:hover *,
+.inline-svg g[data-name="body1"]:hover * {
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+}
+
+/* JS adds this for touch/keyboard parity */
+.inline-svg g.is-hovered * {
+  filter: brightness(1.3);
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+/* Text outlines look nicer with paint-order */
+.inline-svg g[data-name="body1"] text {
+  paint-order: stroke fill;
+}
+/* Remove the default square focus ring, keep our custom glow as focus style */
+.inline-svg g[role="button"]:focus {
+  outline: none;
+}
+
+/* Make the inlined SVG behave exactly like the old <img> */
+.info-graphic .inline-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 90vh; /* keep roughly the same visual height as before */
+  margin: 0 auto; /* center like the image did */
+}
+
+/* Optional: keep the section from stretching vertically */
+.info-graphic {
+  text-align: center;
+  overflow: hidden; /* stops overflow if SVG has outer whitespace */
+}
