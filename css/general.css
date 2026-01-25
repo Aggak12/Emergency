@@ -23,6 +23,15 @@ header {
   column-gap: 1.5rem;
   width: 100%;
 }
+.warning-icon {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 auto;
+}
+.banner-text {
+  flex: 1;
+  min-width: 0;
+}
 #main-disclamer h1 {
   font-weight: 700;
   font-size: 2rem;
@@ -31,25 +40,7 @@ header {
   font-weight: 300;
   font-size: 1.5rem;
 }
-.warning-icon {
-  width: 52px;
-  height: 52px;
-  border: 4px solid #ffffff;
-  border-radius: 50%;
-  position: relative;
-  flex: 0 0 auto;
-}
 
-.warning-icon::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30px;
-  height: 4px;
-  background-color: #ffffff;
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
 main section {
   padding: 20px;
   border-radius: var(--border-radius);
