@@ -9,29 +9,47 @@ header {
 }
 
 #main-disclamer {
-  height: 225px;
+  min-height: 225px;
   background-color: var(--color-head-bg);
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  padding-left: 2rem;
-  padding-bottom: 2%;
+  padding: 2rem;
   margin-bottom: var(--margin-head-bottom);
 }
 
 #main-disclamer-content {
   display: flex;
-  column-gap: 1rem;
+  align-items: center;
+  column-gap: 1.5rem;
+  width: 100%;
 }
 #main-disclamer h1 {
-  font-weight: 700; /* or 800 or 900 depending on your taste */
-  font-size: 2rem; /* optional, if you want it bigger */
+  font-weight: 700;
+  font-size: 2rem;
 }
 #main-disclamer .sub {
   font-weight: 300;
   font-size: 1.5rem;
 }
+.warning-icon {
+  width: 52px;
+  height: 52px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  position: relative;
+  flex: 0 0 auto;
+}
 
+.warning-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 4px;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 main section {
   padding: 20px;
   border-radius: var(--border-radius);
