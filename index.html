@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -46,7 +46,9 @@
     <main>
       <section id="daily">
         <article class="daily_card">
-          <img src="" alt="teaser_img" />
+          <div class="daily_img_wrap">
+            <img src="img/infogr.svg" alt="teaser_img" />
+          </div>
           <div class="daily_text">
             <h2>NÆRKONTAKT</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat magnam ducimus ea, sed minima asperiores.</p>
@@ -66,23 +68,41 @@
         <article class="news_card">
           <h3>Nyhed</h3>
           <p>Lorem ipsum dolor sit, sed minima asperiores.</p>
-          <img src="" alt="news_img" />
-          <a class="cta_btn" href="">Læs mere</a>
+          <div class="img_teaser">
+            <img src="img/news1.png" alt="news_img" />
+          </div>
+          <a class="cta_btn js-open-modal" href="#">Læs mere</a>
         </article>
         <article class="news_card">
           <h3>Nyhed</h3>
           <p>Lorem ipsum dolor sit, sed minima asperiores.</p>
-          <img src="" alt="news_img" />
-          <a class="cta_btn" href="">Læs mere</a>
+          <div class="img_teaser">
+            <img src="img/news2.png" alt="news_img" />
+          </div>
+          <a class="cta_btn js-open-modal" href="#">Læs mere</a>
         </article>
         <article class="news_card">
           <h3>Nyhed</h3>
           <p>Lorem ipsum dolor sit, sed minima asperiores.</p>
-          <img src="" alt="news_img" />
-          <a class="cta_btn" href="">Læs mere</a>
+          <div class="img_teaser">
+            <img src="img/news3.png" alt="news_img" />
+          </div>
+          <a class="cta_btn js-open-modal" href="#">Læs mere</a>
         </article>
       </section>
     </main>
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal__backdrop" data-close="true"></div>
+
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal__close" type="button" aria-label="Close" data-close="true">×</button>
+
+        <h2 class="modal__title" id="modalTitle"></h2>
+        <p class="modal__desc" id="modalDesc"></p>
+
+        <img class="modal__img" id="modalImg" alt="" />
+      </div>
+    </div>
 
     <footer>
       <nav class="some">
@@ -93,6 +113,7 @@
       </nav>
     </footer>
     <script src="js/burger.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
+    <script src="js/popup.js"></script>
   </body>
 </html>

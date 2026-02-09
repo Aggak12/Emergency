@@ -32,7 +32,7 @@ form.addEventListener(
     e.preventDefault();
     (form.querySelector(":user-invalid") || form.querySelector(":invalid"))?.focus();
   },
-  true
+  true,
 );
 
 // ====== Handle form submission ======
