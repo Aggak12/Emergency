@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -25,8 +25,8 @@
           </a>
         </div>
         <ul class="menu">
-          <li><a class="menuItem" href="instruction.html">Nærkontakt </a></li>
-          <li><a class="menuItem" href="register.html">Indberet</a></li>
+          <li><a class="menuItem" href="instruction.html">About </a></li>
+          <li><a class="menuItem" href="register.html">Inquiries</a></li>
         </ul>
         <button class="burger">
           <span class="line"></span>
@@ -36,12 +36,13 @@
       </nav>
     </header>
 
-    <main>
-      <h1>INDBERET</h1>
+    <main id="webform">
+      <h1>FILL OUT THE FORM WITH YOUR SPECIFIC INQUIRY</h1>
 
-      <section>
-        <h2>Formular</h2>
-        <form aria-label="EK signup form">
+      <section id="form-section">
+        <h2>Inquiry</h2>
+
+        <form aria-label="EK inquiry form">
           <div class="form-group">
             <label for="first_name">First name</label>
             <input type="text" id="first_name" name="first_name" aria-describedby="fname-error" required />
@@ -55,58 +56,62 @@
           </div>
 
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" aria-describedby="email-error" required />
-            <p class="error-message" id="email-error">Please enter a value</p>
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" aria-describedby="address-error" required />
+            <p class="error-message" id="address-error">Please enter a value</p>
           </div>
 
           <div class="form-group">
-            <label for="password">Password</label>
-            <p id="password-instruction">Password must be at least 8 characters</p>
-            <input type="password" id="password" name="password" aria-describedby="password-instruction password-error" required />
-            <p class="error-message" id="password-error">Please enter a value</p>
+            <label for="phone">Phone number</label>
+            <p id="phone-instruction">You will most likely be contacted via phone call or a home visit by the Dolls</p>
+            <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" aria-describedby="phone-instruction phone-error" required />
+            <p class="error-message" id="phone-error">Please enter a value</p>
           </div>
 
           <div class="form-group">
-            <fieldset>
-              <legend>Favourite Languages</legend>
+            <fieldset aria-describedby="situation-msg">
+              <legend>Situation</legend>
               <div>
-                <label for="html">
-                  <input type="checkbox" value="HTML" name="language" id="html" aria-describedby="lang-msg" required />
-                  HTML
+                <label>
+                  <input type="checkbox" value="Send disappointing husband to correction camp" name="situation" />
+                  Send disappointing husband to correction camp
                 </label>
-                <label for="css">
-                  <input type="checkbox" value="CSS" name="language" id="css" aria-describedby="lang-msg" />
-                  CSS
+
+                <label>
+                  <input type="checkbox" value="In need of Premium Vodka" name="situation" />
+                  In need of Premium Vodka
                 </label>
-                <label for="javascript">
-                  <input type="checkbox" value="JavaScript" name="language" id="javascript" aria-describedby="lang-msg" />
-                  JavaScript
+
+                <label>
+                  <input type="checkbox" value="At home fur/leather evaluation by the Dolls (minor service fee will be added)" name="situation" />
+                  At home fur/leather evaluation by the Dolls (minor service fee will be added)
                 </label>
               </div>
             </fieldset>
-            <p id="lang-msg" class="error-message">Please select a language</p>
+            <p id="situation-msg" class="error-message">Please select at least one situation</p>
           </div>
 
           <div class="form-group">
-            <fieldset>
-              <legend>Favourite Frameworks</legend>
+            <fieldset aria-describedby="urgent-msg">
+              <legend>How urgent?</legend>
               <div>
                 <label>
-                  <input type="checkbox" value="React" name="framework" required />
-                  React
+                  <input type="radio" value="Same day as placed inquiry (Priority fee)" name="urgency" required />
+                  Same day as placed inquiry (Priority fee)
                 </label>
+
                 <label>
-                  <input type="checkbox" value="Vue" name="framework" />
-                  Vue
+                  <input type="radio" value="1-3 days (Standard fee)" name="urgency" />
+                  1-3 days (Standard fee)
                 </label>
+
                 <label>
-                  <input type="checkbox" value="Angular" name="framework" />
-                  Angular
+                  <input type="radio" value="Within next 6 days (no fees)" name="urgency" />
+                  within next 6 days (no fees)
                 </label>
               </div>
             </fieldset>
-            <p class="error-message">Please select a framework</p>
+            <p id="urgent-msg" class="error-message">Please select urgency</p>
           </div>
 
           <div class="form-group">
@@ -117,22 +122,25 @@
             <p class="error-message" id="terms-error">Please tick the box</p>
           </div>
 
-          <button>Sign up</button>
+          <button type="submit">Send</button>
         </form>
       </section>
-      <section class="output">
-        <h2>Opsamling (output)</h2>
+
+      <section class="form-summary">
+        <h2>Output</h2>
 
         <div>
           <p>First name: <span id="first_name_output"></span></p>
           <p>Last name: <span id="last_name_output"></span></p>
-          <p>Email: <span id="email_output"></span></p>
-          <p>Password: <span id="password_output"></span></p>
-          <p>Favourite Languages: <span id="lang_output"></span></p>
+          <p>Address: <span id="address_output"></span></p>
+          <p>Phone number: <span id="phone_output"></span></p>
+          <p>Situation: <span id="situation_output"></span></p>
+          <p>Urgency: <span id="urgency_output"></span></p>
           <p>Terms accepted: <span id="terms_output"></span></p>
         </div>
       </section>
     </main>
+
     <footer>
       <nav class="some">
         <ul>
